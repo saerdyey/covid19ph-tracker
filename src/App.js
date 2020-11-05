@@ -17,6 +17,11 @@ const App = () => {
   const [death, setDeath] = useState()
   
   //? All Time Data
+  const [tests, setTests] = useState()
+  const [confirmed, setConfirmed] = useState()
+  const [recovered, setRecovered] = useState()
+  const [atDeaths, setAtdeaths] = useState()
+  const [active, setActive] = useState()
 
   const getData = async () => {
     const response = await fetch(url)
@@ -24,6 +29,11 @@ const App = () => {
     console.log(data)
     setToday(data.todayCases)
     setDeath(data.todayDeaths)
+    setTests(data.tests)
+    setConfirmed(data.cases)
+    setRecovered(data.recovered)
+    setAtdeaths(data.deaths)
+    setActive(data.active)
   }
 
   return (
@@ -54,23 +64,23 @@ const App = () => {
             <div className="all-time-container">
               <div className="all-time-test">
                 <h4>TESTS CONDUCTED</h4>
-                <h1>{today}</h1>
+                <h1>{tests}</h1>
               </div>
               <div className="all-time-confirmed">
                 <h4>CONFIRMED CASES</h4>
-                <h1>{today}</h1>
+                <h1>{confirmed}</h1>
               </div>
               <div className="all-time-recovered">
-                <h4>CONFIRMED CASES</h4>
-                <h1>{today}</h1>
+                <h4>RECOVERED</h4>
+                <h1>{recovered}</h1>
               </div>
               <div className="all-time-deaths">
-                <h4>CONFIRMED CASES</h4>
-                <h1>{today}</h1>
+                <h4>DEATHS</h4>
+                <h1>{atDeaths}</h1>
               </div>
               <div className="all-time-active">
-                <h4>CONFIRMED CASES</h4>
-                <h1>{today}</h1>
+                <h4>ACTIVE CASES</h4>
+                <h1>{active}</h1>
               </div>
             </div>
           </div>
