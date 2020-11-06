@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CountUp from 'react-countup'
 import './App.css';
 import coronavirus from './coronavirus.png'
 
@@ -55,14 +56,14 @@ const App = () => {
     setGrecovered(globaldata.recovered.toLocaleString('en'))
     setGdeaths(globaldata.deaths.toLocaleString('en'))
     setGactive(globaldata.active.toLocaleString('en'))
-    setGaffected(globaldata.affectedCountries.toLocaleString('en'))
+    setGaffected(globaldata.affectedCountries)
 
   }
 
   return (
     <div className="App">
       <header>
-        <h1>PHILIPPINES C<img src={coronavirus} alt="" width="50" id="logo"/>VID19 CASES TRACKER</h1>
+        <h1>PHL C<img src={coronavirus} alt="" width="50" id="logo"/>VID19 CASES TRACKER</h1>
       </header>
 
       <section id="cases">
@@ -75,11 +76,11 @@ const App = () => {
               <div className="box-container">
                 <div className="box">
                   <h4>CONFIRMED CASES</h4>
-                  <h1>{today}</h1>
+                  <h1 className="num">{today}</h1>
                 </div>
                 <div className="box">
                   <h4>DEATHS</h4>
-                  <h1>{death}</h1>
+                  <h1 className="num">{death}</h1>
                 </div>
               </div>
             </div>
@@ -90,23 +91,23 @@ const App = () => {
               <div className="box-container">
                 <div className="box">
                   <h4>TESTS CONDUCTED</h4>
-                  <h1>{tests}</h1>
+                  <h1 className="num">{tests}</h1>
                 </div>
                 <div className="box">
                   <h4>CONFIRMED CASES</h4>
-                  <h1>{confirmed}</h1>
+                  <h1 className="num">{confirmed}</h1>
                 </div>
                 <div className="box">
                   <h4>RECOVERED</h4>
-                  <h1>{recovered}</h1>
+                  <h1 className="num">{recovered}</h1>
                 </div>
                 <div className="box">
                   <h4>DEATHS</h4>
-                  <h1>{atDeaths}</h1>
+                  <h1 className="num">{atDeaths}</h1>
                 </div>
                 <div className="box">
                   <h4>ACTIVE CASES</h4>
-                  <h1>{active}</h1>
+                  <h1 className="num">{active}</h1>
                 </div>
               </div>
             </div>
@@ -118,33 +119,32 @@ const App = () => {
           <div className="box-container">
                 <div className="box">
                   <h4>TESTS CONDUCTED</h4>
-                  <h1>{Gtests}</h1>
+                  <h1 className="num">{Gtests}</h1>
                 </div>
                 <div className="box">
                   <h4>CONFIRMED CASES</h4>
-                  <h1>{Gcases}</h1>
+                  <h1 className="num">{Gcases}</h1>
                 </div>
                 <div className="box">
                   <h4>RECOVERED</h4>
-                  <h1>{Grecovered}</h1>
+                  <h1 className="num">{Grecovered}</h1>
                 </div>
                 <div className="box">
                   <h4>DEATHS</h4>
-                  <h1>{Gdeaths}</h1>
+                  <h1 className="num">{Gdeaths}</h1>
                 </div>
                 <div className="box">
                   <h4>ACTIVE CASES</h4>
-                  <h1>{Gactive}</h1>
+                  <h1 className="num">{Gactive}</h1>
                 </div>
                 <div className="box">
-                  <h4>AFFECTED COUNRIES</h4>
-                  <h1>{Gaffected}</h1>
+                  <h4>AFFECTED COUNTRIES</h4>
+                  <h1 className="num">{Gaffected}</h1>
                 </div>
               </div>
           </div>
         </div>
       </section>
-
 
       <footer>
         <p>&#60;/&#62; by Jay Anton Roblico</p>
