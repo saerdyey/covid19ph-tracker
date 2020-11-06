@@ -1,10 +1,34 @@
 header {
   height: 10vh;
-  margin: 0;
+  margin: auto;
   background-color: #070c11;
   color: #fff;
   text-align: center;
+  align-items: center;
   padding-top: 10px;
+}
+
+#logo {
+  vertical-align: middle;
+  -webkit-animation: spin 4s linear infinite;
+  -moz-animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 #cases {
@@ -33,8 +57,8 @@ h4 {
   margin: auto;
 }
 
-.today {
-  padding-top: 40px;
+#PH {
+  font-size: 50px;
 }
 
 .box-container {
@@ -53,7 +77,7 @@ h4 {
 }
 
 footer {
-  height: 10vh;
+  min-height: 10vh;
   margin: 0;
   background-color: #070c11;
   color: #fff;
@@ -66,4 +90,8 @@ footer {
 footer a {
   text-decoration: none;
   color: inherit;
+}
+
+footer p {
+  margin-top: 5px;
 }
