@@ -8,6 +8,10 @@ header {
   padding-top: 10px;
 }
 
+header h1 {
+  margin: 0;
+}
+
 #logo {
   vertical-align: middle;
   -webkit-animation: spin 4s linear infinite;
@@ -31,20 +35,23 @@ header {
   }
 }
 
+main {
+  background-color: #202224;
+}
+
 #cases {
   min-height: 90vh;
   padding-bottom: 50px;
-  background-color: #202224;
   color: rgb(177, 177, 177);
+  background-color: #202224;
 }
 
-#cases h1,
-h2 {
-  padding: 15px;
+#cases h2 {
+  padding: 10px;
 }
 
 #cases h4 {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 #cases h1,
@@ -93,7 +100,7 @@ footer a {
 }
 
 footer p {
-  margin-top: 5px;
+  margin: 2px;
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
@@ -106,6 +113,9 @@ footer p {
 }
 
 @media screen and (max-width: 768px) and (min-width: 200px) {
+  header {
+    color: red;
+  }
   .box {
     flex-wrap: nowrap;
     flex-direction: column;
