@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import coronavirus from './coronavirus.png'
+import coronavirus from './img/coronavirus.png'
 import PhilCases from './components/PhilCases'
 import GlobalCases from './components/GlobalCases'
+import ProtectiveMeasures from './components/ProtectiveMeasures'
 
 const App = () => {
 
@@ -27,6 +28,11 @@ const App = () => {
             <GlobalCases/>
           </div>
         </div>
+      </section>
+
+      <section id="protective">
+        <h2 id="bpm">Basic Protective Measures</h2>
+        <ProtectiveMeasures/>
       </section>
 
       <footer>

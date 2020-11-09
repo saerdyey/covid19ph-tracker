@@ -83,6 +83,21 @@ h4 {
   border-radius: 10px;
 }
 
+#protective {
+  min-height: 90vh;
+  padding-bottom: 50px;
+  color: rgb(177, 177, 177);
+  background-color: #202224;
+  text-align: center;
+}
+
+.pmeasures {
+  background-color: #0f0e0e;
+  width: 70%;
+  margin: auto;
+  border-radius: 10px;
+}
+
 footer {
   min-height: 10vh;
   margin: 0;
@@ -104,18 +119,12 @@ footer p {
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
-  header {
-    color: yellow;
-  }
   .box {
     width: 45%;
   }
 }
 
 @media screen and (max-width: 768px) and (min-width: 200px) {
-  header {
-    color: red;
-  }
   .box {
     flex-wrap: nowrap;
     flex-direction: column;

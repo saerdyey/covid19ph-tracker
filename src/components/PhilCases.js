@@ -81,7 +81,7 @@ const PhilCases = () => {
                 </div>
             </div>
 
-            <ChartsPage tests={tests} confirmed={confirmed} recovered={recovered} atDeaths={atDeaths} active={active}/>
+            {/* <ChartsPage tests={tests} confirmed={confirmed} recovered={recovered} atDeaths={atDeaths} active={active}/> */}
 
         </div>
     )
