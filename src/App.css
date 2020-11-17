@@ -98,6 +98,57 @@ h4 {
   border-radius: 10px;
 }
 
+.pmeasure {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  align-items: center;
+  text-align: start;
+}
+
+.p-icons {
+  flex: 1;
+}
+
+.p-icons img {
+  display: block;
+  margin: auto;
+}
+
+.p-text {
+  flex: 5;
+}
+.p-text h4 {
+  text-align: start;
+}
+
+#twitter {
+  min-height: 90vh;
+  padding-bottom: 50px;
+  color: rgb(177, 177, 177);
+  background-color: #202224;
+  text-align: center;
+}
+
+.twitter-container {
+  width: 80%;
+  margin: auto;
+}
+
+.twitters {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 20px;
+  align-items: center;
+}
+
+.twitters a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 footer {
   min-height: 10vh;
   margin: 0;

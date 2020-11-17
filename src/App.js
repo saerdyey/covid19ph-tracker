@@ -4,6 +4,7 @@ import coronavirus from './img/coronavirus.png'
 import PhilCases from './components/PhilCases'
 import GlobalCases from './components/GlobalCases'
 import ProtectiveMeasures from './components/ProtectiveMeasures'
+import Twitter from './components/Twitter'
 
 const App = () => {
 
@@ -35,10 +36,16 @@ const App = () => {
         <ProtectiveMeasures/>
       </section>
 
+      <section id="twitter">
+        <h2 id="bpm">Latest Covid 19 News</h2>
+        <Twitter/>
+      </section>
+
       <footer>
         <p>&#60;/&#62; by Jay Anton Roblico</p>
         <p>API by <a href="https://disease.sh/">Novel Covid19</a></p>
         <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+        <p>Inspired by Mark Uy's <a href="https://covid19.com.ph/">COVID 19 PH Tracker</a></p>
       </footer>
     </div>
   );
