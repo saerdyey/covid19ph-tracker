@@ -1,21 +1,51 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react'
 
-const Twitter = () => {
-    return(
-        <div className="twitter-container">
-            <div className="twitters">
-                <div className="twitter">
-                <a class="twitter-timeline" data-width="320" data-height="500" data-theme="dark" href="https://twitter.com/WHOPhilippines?ref_src=twsrc%5Etfw">Tweets by WHOPhilippines</a>
-                </div>
-                <div className="twitter">
-                <a class="twitter-timeline" data-width="320" data-height="500" data-theme="dark" href="https://twitter.com/DOHgovph?ref_src=twsrc%5Etfw">Tweets by DOHgovph</a>
-                </div>
-                <div className="twitter">
-                <a class="twitter-timeline" data-width="320" data-height="500" data-theme="dark" href="https://twitter.com/Covid19Ph?ref_src=twsrc%5Etfw">Tweets by Covid19Ph</a>
-                </div>
-            </div>
-        </div>
-    )
+const accounts = [
+  { handle: 'WHOPhilippines', name: 'WHO Philippines' },
+  { handle: 'DOHgovph', name: 'Department of Health' },
+  { handle: 'Covid19Ph', name: 'COVID-19 PH' },
+]
+
+const Twitter = ({ theme }) => {
+  const containerRef = useRef(null)
+
+  // widgets.js swaps each <a> for an iframe with a fixed theme, so the timelines
+  // are re-mounted (via key) and re-rendered whenever the theme changes.
+  useEffect(() => {
+    window.twttr?.widgets?.load(containerRef.current)
+  }, [theme])
+
+  return (
+    <div className="twitter-container" ref={containerRef}>
+      <div className="twitters" key={theme}>
+        {accounts.map(({ handle, name }) => (
+          <div className="twitter card" key={handle}>
+            <a
+              className="twitter-timeline"
+              data-height="500"
+              data-theme={theme}
+              data-chrome="noheader transparent"
+              href={`https://twitter.com/${handle}?ref_src=twsrc%5Etfw`}
+            >
+              Posts by {name} (@{handle})
+            </a>
+          </div>
+        ))}
+      </div>
+      <p className="muted twitter-fallback">
+        Feeds not loading? Visit{' '}
+        {accounts.map(({ handle }, i) => (
+          <React.Fragment key={handle}>
+            {i > 0 && (i === accounts.length - 1 ? ' or ' : ', ')}
+            <a href={`https://x.com/${handle}`} target="_blank" rel="noreferrer">
+              @{handle}
+            </a>
+          </React.Fragment>
+        ))}{' '}
+        on X.
+      </p>
+    </div>
+  )
 }
 
-export default Twitter;
+export default Twitter

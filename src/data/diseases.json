@@ -1,0 +1,173 @@
+{
+  "generatedAt": "2026-10-22T13:34:58.412Z",
+  "diseases": [
+    {
+      "id": "tuberculosis",
+      "name": "Tuberculosis",
+      "metric": "new cases",
+      "basis": "estimated",
+      "year": 2024,
+      "value": 724000,
+      "previous": {
+        "year": 2023,
+        "value": 726000
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/TB_e_inc_num"
+    },
+    {
+      "id": "dengue",
+      "name": "Dengue",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2022,
+      "value": 220020,
+      "previous": {
+        "year": 2021,
+        "value": 79592
+      },
+      "source": "OpenDengue V1.3",
+      "sourceUrl": "https://opendengue.org/"
+    },
+    {
+      "id": "hiv",
+      "name": "HIV",
+      "metric": "new infections",
+      "basis": "estimated",
+      "year": 2025,
+      "value": 34000,
+      "previous": {
+        "year": 2024,
+        "value": 30000
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/HIV_0000000026"
+    },
+    {
+      "id": "malaria",
+      "name": "Malaria",
+      "metric": "confirmed cases",
+      "basis": "reported",
+      "year": 2024,
+      "value": 9021,
+      "previous": {
+        "year": 2023,
+        "value": 6248
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/MALARIA_CONF_CASES"
+    },
+    {
+      "id": "measles",
+      "name": "Measles",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 5042,
+      "previous": {
+        "year": 2024,
+        "value": 3844
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_62"
+    },
+    {
+      "id": "leprosy",
+      "name": "Leprosy",
+      "metric": "new cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 1672,
+      "previous": {
+        "year": 2024,
+        "value": 1707
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_45"
+    },
+    {
+      "id": "tetanus",
+      "name": "Tetanus",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 950,
+      "previous": {
+        "year": 2024,
+        "value": 1301
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_46"
+    },
+    {
+      "id": "rabies",
+      "name": "Rabies",
+      "metric": "deaths",
+      "basis": "reported",
+      "year": 2024,
+      "value": 425,
+      "previous": {
+        "year": 2023,
+        "value": 400
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/NTD_RAB2"
+    },
+    {
+      "id": "japanese-encephalitis",
+      "name": "Japanese encephalitis",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 153,
+      "previous": {
+        "year": 2024,
+        "value": 44
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_42"
+    },
+    {
+      "id": "diphtheria",
+      "name": "Diphtheria",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 117,
+      "previous": {
+        "year": 2024,
+        "value": 205
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_41"
+    },
+    {
+      "id": "rubella",
+      "name": "Rubella",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 117,
+      "previous": {
+        "year": 2024,
+        "value": 57
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_57"
+    },
+    {
+      "id": "pertussis",
+      "name": "Pertussis (whooping cough)",
+      "metric": "cases",
+      "basis": "reported",
+      "year": 2025,
+      "value": 2,
+      "previous": {
+        "year": 2024,
+        "value": 843
+      },
+      "source": "WHO GHO",
+      "sourceUrl": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/WHS3_43"
+    }
+  ]
+}

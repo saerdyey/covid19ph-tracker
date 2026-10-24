@@ -1,61 +1,32 @@
-import React, { useState } from 'react';
-import CountUp from 'react-countup'
+import React from 'react'
+import StatCard from './StatCard'
+import useFetchJson from '../hooks/useFetchJson'
+
+const urlGB = 'https://disease.sh/v3/covid-19/all'
 
 const GlobalCases = () => {
+  const { data, error, loading } = useFetchJson(urlGB)
 
-    const urlGB = 'https://disease.sh/v3/covid-19/all'
+  if (error) return <p className="error-note">Couldn't load global data right now. Please try again later.</p>
 
-    //? GLOBAL DATA
-    const [Gtests, setGtests] = useState(0)
-    const [Gcases, setGcases] = useState(0)
-    const [Grecovered, setGrecovered] = useState(0)
-    const [Gdeaths, setGdeaths] = useState(0)
-    const [Gactive, setGactive] = useState(0)
-    const [Gaffected, setGaffected] = useState(0)
-
-    const getDataGlobal = async () => {
-        const response = await fetch(urlGB)
-        const globaldata = await response.json();
-        setGtests(globaldata.tests)
-        setGcases(globaldata.cases)
-        setGrecovered(globaldata.recovered)
-        setGdeaths(globaldata.deaths)
-        setGactive(globaldata.active)
-        setGaffected(globaldata.affectedCountries)
-    }
-
-    getDataGlobal()
-
-    return(
-        <div className="globalcases">
-            <div className="box-container">
-                <div className="box">
-                    <h4>TESTS CONDUCTED</h4>
-                    <h1><CountUp separator="," end={Gtests}/></h1>
-                </div>
-                <div className="box">
-                    <h4>CONFIRMED CASES</h4>
-                    <h1 className="num"><CountUp separator="," end={Gcases}/></h1>
-                </div>
-                <div className="box">
-                    <h4>RECOVERED</h4>
-                    <h1 className="num"><CountUp separator="," end={Grecovered}/></h1>
-                </div>
-                <div className="box">
-                    <h4>DEATHS</h4>
-                    <h1 className="num"><CountUp separator="," end={Gdeaths}/></h1>
-                </div>
-                <div className="box">
-                    <h4>ACTIVE CASES</h4>
-                    <h1 className="num"><CountUp separator="," end={Gactive}/></h1>
-                </div>
-                <div className="box">
-                    <h4>AFFECTED COUNTRIES</h4>
-                    <h1 className="num"><CountUp separator="," end={Gaffected}/></h1>
-                </div>
-            </div>
+  return (
+    <div className="globalcases">
+      <div className="stat-group">
+        <div className="stat-group-head">
+          <h3>All time</h3>
+          <p className="muted">Worldwide totals</p>
         </div>
-    )
+        <div className="stat-grid">
+          <StatCard label="Tests conducted" value={data?.tests} loading={loading} />
+          <StatCard label="Confirmed cases" value={data?.cases} tone="cases" loading={loading} />
+          <StatCard label="Recovered" value={data?.recovered} tone="recovered" loading={loading} />
+          <StatCard label="Deaths" value={data?.deaths} tone="deaths" loading={loading} />
+          <StatCard label="Active cases" value={data?.active} tone="active" loading={loading} />
+          <StatCard label="Affected countries" value={data?.affectedCountries} loading={loading} />
+        </div>
+      </div>
+    </div>
+  )
 }
 
-export default GlobalCases;
+export default GlobalCases

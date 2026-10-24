@@ -1,5 +1,124 @@
-* {
+/* Theme tokens. Light is the base; dark applies via the OS setting (unless the
+   user picked light) or the explicit toggle on <html data-theme>. */
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #e3e6eb;
+  --text: #0f172a;
+  --text-2: #475569;
+  --text-3: #64748b;
+  --accent: #2a78d6;
+  --accent-soft: rgba(42, 120, 214, 0.12);
+  --bar: #2a78d6;
+  --bar-track: #eef1f5;
+  --tone-cases: #eb6834;
+  --tone-recovered: #1baf7a;
+  --tone-deaths: #e34948;
+  --tone-active: #6250d6;
+  --tone-neutral: #94a3b8;
+  --warn-bg: #fff4e0;
+  --warn-text: #8a5300;
+  --header-bg: rgba(246, 247, 249, 0.82);
+  --shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0b1220;
+    --surface: #121a2b;
+    --surface-2: #1a2336;
+    --border: #243049;
+    --text: #e8edf5;
+    --text-2: #b4bfd0;
+    --text-3: #8b98ad;
+    --accent: #5b9df0;
+    --accent-soft: rgba(91, 157, 240, 0.16);
+    --bar: #3987e5;
+    --bar-track: #1c2639;
+    --tone-cases: #d95926;
+    --tone-recovered: #199e70;
+    --tone-deaths: #e66767;
+    --tone-active: #9085e9;
+    --tone-neutral: #64748b;
+    --warn-bg: #3a2a0c;
+    --warn-text: #f5c56b;
+    --header-bg: rgba(11, 18, 32, 0.8);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b1220;
+  --surface: #121a2b;
+  --surface-2: #1a2336;
+  --border: #243049;
+  --text: #e8edf5;
+  --text-2: #b4bfd0;
+  --text-3: #8b98ad;
+  --accent: #5b9df0;
+  --accent-soft: rgba(91, 157, 240, 0.16);
+  --bar: #3987e5;
+  --bar-track: #1c2639;
+  --tone-cases: #d95926;
+  --tone-recovered: #199e70;
+  --tone-deaths: #e66767;
+  --tone-active: #9085e9;
+  --tone-neutral: #64748b;
+  --warn-bg: #3a2a0c;
+  --warn-text: #f5c56b;
+  --header-bg: rgba(11, 18, 32, 0.8);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: var(--accent);
+}
+
+img {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

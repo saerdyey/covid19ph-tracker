@@ -1,227 +1,540 @@
-header {
-  min-height: 10vh;
-  margin: auto;
-  background-color: #070c11;
-  color: #fff;
-  text-align: center;
-  align-items: center;
-  padding-top: 10px;
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-header h1 {
-  margin: 0;
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.muted {
+  color: var(--text-3);
+  font-size: 0.9rem;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--header-bg);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 60px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.brand strong {
+  font-weight: 700;
 }
 
 #logo {
-  vertical-align: middle;
-  -webkit-animation: spin 4s linear infinite;
-  -moz-animation: spin 4s linear infinite;
-  animation: spin 4s linear infinite;
+  animation: spin 6s linear infinite;
 }
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
+
 @keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
+  to {
     transform: rotate(360deg);
   }
 }
 
-main {
-  background-color: #202224;
+.site-nav {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
 }
 
-#cases {
-  min-height: 90vh;
-  padding-bottom: 50px;
-  color: rgb(177, 177, 177);
-  background-color: #202224;
+.site-nav a {
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-#cases h2 {
-  padding: 10px;
+.site-nav a:hover {
+  background: var(--surface-2);
+  color: var(--text);
 }
 
-#cases h4 {
-  padding-top: 10px;
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
 }
 
-#cases h1,
-h4 {
-  text-align: center;
+.theme-toggle:hover {
+  background: var(--surface-2);
 }
+
+.theme-toggle:active {
+  transform: scale(0.94);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 56px 0 24px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+}
+
+.lede {
+  margin-top: 14px;
+  color: var(--text-2);
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 40px 0;
+}
+
+.section-head {
+  margin-bottom: 20px;
+}
+
+.section-head h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.section-head .muted {
+  margin-top: 4px;
+}
+
+/* ---------- COVID cases ---------- */
 
 .cases-wrapper {
-  width: 80%;
-  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: start;
 }
 
-#PH {
-  font-size: 50px;
+.region {
+  padding: 22px;
 }
 
-.box-container {
+.region-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.stat-group + .stat-group {
+  margin-top: 22px;
+}
+
+.stat-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin-bottom: 12px;
+}
+
+.stat-group-head h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  position: relative;
+  padding: 14px 16px 14px 18px;
+  background: var(--surface-2);
+  border-radius: 10px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: var(--tone-neutral);
+}
+
+.tone-cases::before { background: var(--tone-cases); }
+.tone-recovered::before { background: var(--tone-recovered); }
+.tone-deaths::before { background: var(--tone-deaths); }
+.tone-active::before { background: var(--tone-active); }
+
+.stat-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-3);
+}
+
+.stat-value {
+  margin-top: 4px;
+  /* Shrinks with the card so 11-character totals like 341,121,872 stay on one line. */
+  font-size: min(1.5rem, 13cqi);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  min-height: 2.25rem;
+  white-space: nowrap;
+}
+
+.skeleton {
+  display: inline-block;
+  width: 70%;
+  height: 1.25rem;
+  border-radius: 6px;
+  background: linear-gradient(90deg, var(--border) 0%, var(--surface) 50%, var(--border) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s ease-in-out infinite;
+  vertical-align: middle;
+}
+
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.error-note {
+  color: var(--text-2);
+  padding: 12px 0;
+}
+
+/* ---------- Diseases ---------- */
+
+.diseases {
+  padding: 22px;
+}
+
+.diseases-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+.segmented button {
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+.disease-list {
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+
+.disease-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background-color 0.15s ease;
+}
+
+.disease-row:hover {
+  background: var(--surface-2);
+}
+
+.disease-rank {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.disease-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.disease-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.disease-name {
+  font-weight: 600;
+}
+
+.disease-value {
+  font-weight: 700;
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.disease-bar-track {
+  margin: 8px 0;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bar-track);
+  overflow: hidden;
+}
+
+.disease-bar {
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  background: var(--bar);
+  transition: width 0.5s ease;
+}
+
+.disease-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  align-content: center;
+  gap: 6px 12px;
+  font-size: 0.8rem;
+  color: var(--text-3);
 }
 
-.box {
-  background-color: #0f0e0e;
-  height: 130px;
-  width: 30%;
-  margin: 15px;
-  border-radius: 10px;
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-2);
 }
 
-#protective {
-  min-height: 90vh;
-  padding-bottom: 50px;
-  color: rgb(177, 177, 177);
-  background-color: #202224;
-  text-align: center;
+.tag-estimated {
+  border-style: dashed;
 }
+
+.tag-warn {
+  border-color: transparent;
+  background: var(--warn-bg);
+  color: var(--warn-text);
+}
+
+.change {
+  color: var(--text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.disease-source {
+  margin-left: auto;
+  color: var(--text-3);
+}
+
+.footnote {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-3);
+}
+
+/* ---------- Protective measures ---------- */
 
 .pmeasures {
-  background-color: #0f0e0e;
-  width: 70%;
-  margin: auto;
-  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
 }
 
 .pmeasure {
   display: flex;
-  justify-content: space-around;
+  gap: 16px;
   padding: 20px;
-  align-items: center;
-  text-align: start;
+  transition: transform 0.15s ease;
 }
 
-.p-icons {
-  flex: 1;
+.pmeasure:hover {
+  transform: translateY(-2px);
 }
 
-.p-icons img {
-  display: block;
-  margin: auto;
+.p-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: var(--surface-2);
 }
 
-.p-text {
-  flex: 5;
-}
-.p-text h4 {
-  text-align: start;
-}
-
-#twitter {
-  min-height: 90vh;
-  padding-bottom: 50px;
-  color: rgb(177, 177, 177);
-  background-color: #202224;
-  text-align: center;
+.p-text h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-bottom: 6px;
 }
 
-.twitter-container {
-  width: 80%;
-  margin: auto;
+.p-text p {
+  color: var(--text-2);
+  font-size: 0.9rem;
 }
+
+/* ---------- News ---------- */
 
 .twitters {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  align-items: center;
-}
-
-.twitters a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
 }
 
 .twitter {
-  border-radius: 5px;
-  -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  min-height: 200px;
+  overflow: hidden;
 }
 
-footer {
-  min-height: 10vh;
-  background-color: #070c11;
-  color: #fff;
+.twitter .twitter-timeline {
+  display: block;
+  padding: 12px;
+}
+
+.twitter-fallback {
+  margin-top: 14px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 40px;
+  padding: 28px 0 36px;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-3);
+  font-size: 0.85rem;
   text-align: center;
-  padding-top: 10px;
-  -webkit-box-shadow: 5px 5px 15px 5px #000000;
-  box-shadow: 5px 5px 15px 5px #000000;
-  font-size: 12px;
 }
 
-footer a {
-  text-decoration: none;
-  color: inherit;
+.site-footer p + p {
+  margin-top: 4px;
 }
 
-footer p {
-  margin: 2px;
+.site-footer a {
+  color: var(--text-2);
 }
 
-@media screen and (max-width: 1024px) and (min-width: 769px) {
-  .box {
-    width: 45%;
-  }
-  .twitters {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .twitter {
-    margin-bottom: 20px;
-  }
-  footer {
-    font-size: 15px;
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .cases-wrapper {
+    grid-template-columns: 1fr;
   }
 }
 
-@media screen and (max-width: 768px) and (min-width: 200px) {
-  .box {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    width: 90%;
-    justify-content: center;
-    margin: auto;
-    margin-top: 15px;
+@media (max-width: 720px) {
+  .site-nav {
+    display: none;
   }
-  #PH {
-    font-size: 40px;
+  .theme-toggle {
+    margin-left: auto;
   }
-  h2,
-  p {
-    text-align: center;
+  .hero {
+    padding-top: 36px;
   }
-  .pmeasure {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .region,
+  .diseases {
+    padding: 16px;
   }
-  .p-text h4 {
-    text-align: center;
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .twitters {
-    flex-direction: column;
-    padding: 20px;
+  .disease-row {
+    padding: 10px 4px;
+    gap: 10px;
   }
-  .twitter {
-    margin-bottom: 20px;
+  .disease-source {
+    margin-left: 0;
   }
-  footer {
-    font-size: 10px;
+  .pmeasures {
+    grid-template-columns: 1fr;
   }
 }
